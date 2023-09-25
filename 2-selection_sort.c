@@ -1,32 +1,32 @@
 #include "sort.h"
 
 /**
- * selection_sort - selection sort algorithm for sorting an array
+ * selection_sort - selection sort algorithm for sorting array
  * @array: array to sort
  * @size: size of array to sort
  */
 void selection_sort(int *array, size_t size)
 {
 	int small_index, temp, flag = 0;
-	size_t m, n;
+	size_t i, j;
 
 	if (size < 2)
 		return;
 
-	for (m = 0; m < size - 1; m++)
+	for (i = 0; i < size - 1; i++)
 	{
 		small_index = i;
-		for (n = m + 1; n < size; n++)
+		for (j = i + 1; j < size; j++)
 		{
-			/* checking whether there is a smaller element */
-			if (array[n] < array[small_index])
+			/* check if there is a smaller element */
+			if (array[j] < array[small_index])
 			{
-				small_index = n;
+				small_index = j;
 				flag = 1;
 			}
 		}
-		temp = array[m];
-		array[m] = array[small_index];
+		temp = array[i];
+		array[i] = array[small_index];
 		array[small_index] = temp;
 		if (flag == 1)
 			print_array(array, size);
