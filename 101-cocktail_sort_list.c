@@ -1,7 +1,7 @@
-nclude "sort.h"
+include "sort.h"
 
 /**
- * swap - swap 2 elements of a  doubly linked list
+ * swap - swap two elements of a  doubly linked list
  * @current: new current element
  * @old: previous current element
  * @list: list to be swapped
